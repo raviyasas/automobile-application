@@ -1,0 +1,5 @@
+
+@Entit
+export class Vehicle{
+
+}

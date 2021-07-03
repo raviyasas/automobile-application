@@ -1,0 +1,5 @@
+
+@Entity
+export class Vehicle{
+
+}
