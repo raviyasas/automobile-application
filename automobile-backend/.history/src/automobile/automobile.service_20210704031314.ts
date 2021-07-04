@@ -14,11 +14,12 @@ export class AutomobileService {
 
         const vehicleArray = await csv().fromFile(csvFilePath);
         var vehicles;
+        c
 
         try {
             vehicles = await this.vehicleRepository.save(vehicleArray);
         } catch (error) {
-            vehicles = null; 
+            vehicles = null;
         }
         return vehicles;
     }

@@ -14,6 +14,7 @@ export class AutomobileService {
 
         const vehicleArray = await csv().fromFile(csvFilePath);
         var vehicles;
+        console.log(vehicleArray) 
 
         try {
             vehicles = await this.vehicleRepository.save(vehicleArray);
