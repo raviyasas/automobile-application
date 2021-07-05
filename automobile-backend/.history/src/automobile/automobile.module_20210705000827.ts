@@ -4,11 +4,10 @@ import { AutomobileService } from './automobile.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Vehicle } from './vehicle';
 import { BullModule } from '@nestjs/bull';
-import { UploadProcessor } from './processors/upload.processor';
 
 @Module({
   controllers: [AutomobileController],
-  providers: [AutomobileService, UploadProcessor],
+  providers: [AutomobileService],
   imports: [
     TypeOrmModule.forFeature([Vehicle]),
     BullModule.forRoot({
@@ -18,7 +17,7 @@ import { UploadProcessor } from './processors/upload.processor';
       },
     }),
     BullModule.registerQueue({
-      name: 'upload-queue'
+      name: 'up'
     })]
 })
 export class AutomobileModule {}

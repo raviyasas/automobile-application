@@ -4,7 +4,6 @@ import { AutomobileService } from './automobile.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Vehicle } from './vehicle';
 import { BullModule } from '@nestjs/bull';
-import { UploadProcessor } from './processors/upload.processor';
 
 @Module({
   controllers: [AutomobileController],

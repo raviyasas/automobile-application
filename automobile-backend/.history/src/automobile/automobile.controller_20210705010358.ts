@@ -2,13 +2,14 @@ import { Controller, Post, UploadedFile, UseInterceptors } from '@nestjs/common'
 import { FileInterceptor } from '@nestjs/platform-express';
 import { extname } from 'path';
 import { diskStorage } from 'multer';
+import { AutomobileService } from './automobile.service';
 import { InjectQueue } from '@nestjs/bull';
 import { Queue } from 'bull';
 
 @Controller('/api/vehicles')
 export class AutomobileController {
 
-    constructor(@InjectQueue('upload-queue') private fileQueue: Queue){}
+    constructor(private autoService: AutomobileService, @InjectQueue('csv-queue') private fileQueue: Queue){}
 
     @Post('/upload')
     @UseInterceptors(FileInterceptor("csv", {
@@ -20,8 +21,9 @@ export class AutomobileController {
           }
         })
       }))
-    async uploadCsv(@UploadedFile() file){
-        this.fileQueue.add('csv', {file: file})
+    async uploadCsv(@UploadedFile() file) : Promise<string[]>{
+        // return this.autoService.saveFile(file);
+        return this.fileQueue
       }
 
 }

@@ -8,7 +8,7 @@ import { Queue } from 'bull';
 @Controller('/api/vehicles')
 export class AutomobileController {
 
-    constructor(@InjectQueue('upload-queue') private fileQueue: Queue){}
+    constructor(@InjectQueue('csv-queue') private fileQueue: Queue){}
 
     @Post('/upload')
     @UseInterceptors(FileInterceptor("csv", {
