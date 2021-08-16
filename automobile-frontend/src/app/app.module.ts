@@ -8,22 +8,42 @@ import { UploadComponent } from './upload/upload.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { EditComponent } from './vehicle/edit/edit.component';
+import { ViewComponent } from './vehicle/view/view.component';
+import { ExportComponent } from './vehicle/export/export.component';
+import { GraphQLModule } from './graphql.module';
+import { ToastrModule } from 'ngx-toastr';
+import { SocketService } from './socket.service';
+import { AutoFocusDirective } from './autofocus.directive';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     UploadComponent,
-    NavbarComponent
+    NavbarComponent,
+    EditComponent,
+    ViewComponent,
+    ExportComponent,
+    AutoFocusDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    GraphQLModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 5000,
+      progressBar: true,
+      progressAnimation: 'increasing'
+    })
   ],
-  providers: [],
+  providers: [SocketService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

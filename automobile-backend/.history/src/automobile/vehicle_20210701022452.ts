@@ -1,5 +1,0 @@
-
-@En
-export class Vehicle{
-
-}

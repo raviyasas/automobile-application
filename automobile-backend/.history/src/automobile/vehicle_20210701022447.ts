@@ -1,5 +1,0 @@
-
-@Entit
-export class Vehicle{
-
-}

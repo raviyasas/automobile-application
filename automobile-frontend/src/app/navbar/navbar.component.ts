@@ -9,4 +9,6 @@ export class NavbarComponent {
 
   constructor() { }
 
+  word!: "";
+
 }
