@@ -21,11 +21,11 @@ const routes: Routes = [
     pathMatch: 'full',
     component: EditComponent
   },
-        {
-          path: 'export',
-          pathMatch: 'full',
-          component: ExportComponent
-        }
+  {
+    path: 'export',
+    pathMatch: 'full',
+    component: ExportComponent
+  }
 ];
 
 @NgModule({

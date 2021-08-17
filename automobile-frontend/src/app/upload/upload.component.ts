@@ -33,7 +33,7 @@ export class UploadComponent {
 
     this.http.post('http://localhost:3000/api/vehicles/upload', formData)
       .subscribe((data) => {
-          alert("Data imported successfully")
+        alert("Data imported successfully")
       }
       )
   }
