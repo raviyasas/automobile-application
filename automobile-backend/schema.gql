@@ -1,0 +1,22 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Vehicle {
+  id: Int!
+  make: String
+  model: String
+  year: String
+  engineNumber: String
+}
+
+type Query {
+  vehicle(id: Int!): Vehicle!
+  vehicles: [Vehicle!]!
+  vehiclesByYear(year: String!): [Vehicle!]!
+}
+
+type Mutation {
+  updateVehicle(year: String!, model: String!, make: String!, id: Int!): Vehicle!
+  deleteVehicle(id: Int!): Vehicle!
+}

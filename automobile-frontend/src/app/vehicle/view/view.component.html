@@ -1,0 +1,27 @@
+<div style="margin: 1%; padding: 2%;">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Car make</th>
+          <th scope="col">Car model</th>
+          <th scope="col">Year</th>
+          <th scope="col">Engine Number</th>
+          <th scope="col">Edit data</th>
+          <th scope="col">Delete data</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let vehicle of vehicles">
+          <td>{{vehicle.id}}</td>
+          <td>{{vehicle.make}}</td>
+          <td>{{vehicle.model}}</td>
+          <td>{{vehicle.year}}</td>
+          <td>{{vehicle.engineNumber}}</td>
+          <td><button [routerLink]="'/edit/' + vehicle.id" class="btn btn-primary">Edit</button></td>
+          <td><button (click)="deleteVehicle(vehicle.id!)" class="btn btn-danger">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  
+  </div>

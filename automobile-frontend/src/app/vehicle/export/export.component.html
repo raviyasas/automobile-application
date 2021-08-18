@@ -1,0 +1,24 @@
+        <div class="container container-table">
+            <div class="row vertical-center-row">
+                <div class="text-center col-md-4 col-md-offset-4">
+                    <form [formGroup]="form" (ngSubmit)="onExportClick()">
+                        <label style="margin-right: 10px;">Enter vehicle year</label>
+                        <p>
+                            <input required [autofocus] type="text" name="year" id="year" 
+                                class="form-control"
+                                formControlName="year">
+                        </p>
+
+                        <div *ngIf="f.year.invalid && (f.year.dirty || f.year.touched)" 
+                            class="alert alert-danger">
+                            <div>Year of the vehicle is required.</div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" [disabled]="!form.valid">
+                            Export to CSV
+                        </button>
+
+                    </form>
+                </div>
+            </div>
+        </div>

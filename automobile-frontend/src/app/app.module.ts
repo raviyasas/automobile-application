@@ -8,20 +8,30 @@ import { UploadComponent } from './upload/upload.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { EditComponent } from './vehicle/edit/edit.component';
+import { ViewComponent } from './vehicle/view/view.component';
+import { ExportComponent } from './vehicle/export/export.component';
+import { GraphQLModule } from './graphql.module';
+import { AutoFocusDirective } from './autofocus.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     UploadComponent,
-    NavbarComponent
+    NavbarComponent,
+    EditComponent,
+    ViewComponent,
+    ExportComponent,
+    AutoFocusDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    GraphQLModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

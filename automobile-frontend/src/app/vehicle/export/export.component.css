@@ -1,0 +1,12 @@
+        html, body, .container-table {
+            height: 100%;
+        }
+        .container-table {
+            display: table;
+            border: 1px rgb(226, 230, 236) solid;
+            padding: 20px;
+        }
+        .vertical-center-row {
+            display: table-cell;
+            vertical-align: middle;
+        }
